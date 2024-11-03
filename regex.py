@@ -26,3 +26,10 @@ match = pattern.search(text)
 print(match.group(1))
 
 
+print("The answer is", 2*2)
+print("test", end=" ")
+print("continue in the same line")
+print("There are <", 2**32, "> possibilities!", sep="")
+
+_set = {1,2,3,3,4}
+print(_set)
