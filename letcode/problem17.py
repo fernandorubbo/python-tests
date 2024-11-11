@@ -4,30 +4,28 @@
 class Problem17:
     def __init__(self):
         self.number_to_letters = {
-            1: None,
-            2: 'abc',
-            3: 'def',
-            4: 'ghi',
-            5: 'jkl',
-            6: 'mno',
-            7: 'pqrs',
-            8: 'tuv',
-            9: 'wxyz',
-            0: None,
+            '2': ['a', 'b', 'c'],
+            '3': ['d', 'e', 'f'],
+            '4': ['g', 'h', 'i'],
+            '5': ['j', 'k', 'l'],
+            '6': ['m', 'n', 'o'],
+            '7': ['p', 'q', 'r', 's'],
+            '8': ['t', 'u', 'v'],
+            '9': ['w', 'x', 'y', 'z'],
         }
 
     def letterCombinations(self, digits: str) -> list[str]:
         output = []
-        for d in digits:
+        for digit in digits:
             try:
-                digit = int(d)
+                int(digit)
             except ValueError:
                 continue
 
-            if digit == 0 or digit == 1:
+            if digit == '0' or digit == '1':
                 continue
 
-            letters = list(self.number_to_letters[digit])
+            letters = self.number_to_letters[digit]
             if len(output) == 0:
                 output = letters
             else:
@@ -38,3 +36,17 @@ class Problem17:
                         output.append(word + l)
 
         return output
+
+    def letterCombinations_rec(self, digits: str) -> list[str]:
+
+        def rec(prefix:str, digits) -> list[str]:
+            if len(digits)==0:
+                return [] if prefix == '' else [prefix]
+
+            output = []
+            letters =  self.number_to_letters[digits[0]]
+            for l in letters:
+                output += rec(prefix+l, digits[1:])
+            return output
+
+        return rec('', digits)

@@ -23,5 +23,26 @@ class TestProblem17(unittest.TestCase):
         expected = ["atjw","atjx","atjy","atjz","atkw","atkx","atky","atkz","atlw","atlx","atly","atlz","aujw","aujx","aujy","aujz","aukw","aukx","auky","aukz","aulw","aulx","auly","aulz","avjw","avjx","avjy","avjz","avkw","avkx","avky","avkz","avlw","avlx","avly","avlz","btjw","btjx","btjy","btjz","btkw","btkx","btky","btkz","btlw","btlx","btly","btlz","bujw","bujx","bujy","bujz","bukw","bukx","buky","bukz","bulw","bulx","buly","bulz","bvjw","bvjx","bvjy","bvjz","bvkw","bvkx","bvky","bvkz","bvlw","bvlx","bvly","bvlz","ctjw","ctjx","ctjy","ctjz","ctkw","ctkx","ctky","ctkz","ctlw","ctlx","ctly","ctlz","cujw","cujx","cujy","cujz","cukw","cukx","cuky","cukz","culw","culx","culy","culz","cvjw","cvjx","cvjy","cvjz","cvkw","cvkx","cvky","cvkz","cvlw","cvlx","cvly","cvlz"]
         self.assertEqual(actual, expected)
 
+    def test_empty_rec(self):
+        actual = Problem17().letterCombinations_rec("")
+        expected = []
+        self.assertEqual(actual, expected)
+
+    def test_2_rec(self):
+        actual = Problem17().letterCombinations_rec("2")
+        expected = ["a","b","c"]
+        self.assertEqual(actual, expected)
+
+    def test_23_rec(self):
+        actual = Problem17().letterCombinations_rec("23")
+        expected = ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+        self.assertEqual(actual, expected)
+
+    def test_2859_rec(self):
+        actual = Problem17().letterCombinations_rec("2859")
+        expected = ["atjw","atjx","atjy","atjz","atkw","atkx","atky","atkz","atlw","atlx","atly","atlz","aujw","aujx","aujy","aujz","aukw","aukx","auky","aukz","aulw","aulx","auly","aulz","avjw","avjx","avjy","avjz","avkw","avkx","avky","avkz","avlw","avlx","avly","avlz","btjw","btjx","btjy","btjz","btkw","btkx","btky","btkz","btlw","btlx","btly","btlz","bujw","bujx","bujy","bujz","bukw","bukx","buky","bukz","bulw","bulx","buly","bulz","bvjw","bvjx","bvjy","bvjz","bvkw","bvkx","bvky","bvkz","bvlw","bvlx","bvly","bvlz","ctjw","ctjx","ctjy","ctjz","ctkw","ctkx","ctky","ctkz","ctlw","ctlx","ctly","ctlz","cujw","cujx","cujy","cujz","cukw","cukx","cuky","cukz","culw","culx","culy","culz","cvjw","cvjx","cvjy","cvjz","cvkw","cvkx","cvky","cvkz","cvlw","cvlx","cvly","cvlz"]
+        self.assertEqual(actual, expected)
+
+
 if __name__ == '__main__':
     unittest.main()
