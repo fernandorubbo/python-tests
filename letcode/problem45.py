@@ -4,8 +4,10 @@ class Problem45:
         """
         Breadth First Search solution..
         BFS is commonly used for shortest path. And "minimum number of jumps" is the shortest path
-        Complexity is O(n * jumps), best complexity is < O(n)
+        Complexity is O(n + jumps), best complexity is < O(n)
         Space is O(3n) -> O(n)
+
+        Note that I kept track of the level along with the index in the queue
         """
         visited = {0}
         queue = [{'i':0,
