@@ -24,7 +24,7 @@ class Problem55:
 
 
 
-    def canJump_time_exceeded(self, nums: List[int]) -> bool:
+    def canJump_time_exceeded(self, nums: list[int]) -> bool:
         """
         Back tracking solution with dynamic programing, by
         saving dead ends and avoiding visiting it multiple times
