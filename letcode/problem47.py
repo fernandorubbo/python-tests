@@ -1,5 +1,5 @@
 class Problem47:
-    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+    def permuteUnique(self, nums: list[int]) -> list[list[int]]:
         if len(nums) == 1:
             return [nums.copy()]
 
