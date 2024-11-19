@@ -67,5 +67,5 @@ class Problem45:
             return min_jumps, found
 
 
-        min_jumps, found = minJumps(0, 0, 100000)
+        min_jumps, _ = minJumps(0, 0, 100000)
         return min_jumps
